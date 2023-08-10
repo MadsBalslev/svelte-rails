@@ -1,5 +1,12 @@
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
+  import { router, Link, page } from '@inertiajs/svelte'
+
+  $: current = $page.url
+
+  function login() {
+    router.get('/login')
+  }
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -7,12 +14,12 @@
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Svelte-Rails</span>
   </NavBrand>
   <div class="flex md:order-2">
-    <Button size="sm">Sign Up!</Button>
+    <Button on:click={login} size="sm">Sign Up!</Button>
     <NavHamburger on:click={toggle} />
   </div>
   <NavUl {hidden} class="order-1">
-    <NavLi href="/" active={true}>Home</NavLi>
-    <NavLi href="/about">About</NavLi>
-    <NavLi href="/contact">Contact</NavLi>
+    <Link href="/">
+      <NavLi active={current == "/"}>Home</NavLi>
+    </Link>
   </NavUl>
 </Navbar>
