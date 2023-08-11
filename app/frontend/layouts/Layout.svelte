@@ -1,9 +1,13 @@
 <script>
-  import NavBar from '@/components/NavBar.svelte';
+  import NavBar from './NavBar.svelte';
+  import FlashMessages from './FlashMessages.svelte';
 </script>
 <NavBar />
-<main>
-  <div class="max-w-7xl mx-auto px-4 sm:px-8">
-    <slot/>
-  </div>
-</main>
+<FlashMessages />
+<div class="max-w-7xl mx-auto px-4 sm:px-8">
+  <main class="">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <slot/>
+    </div>
+  </main>
+</div>

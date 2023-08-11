@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  skip_before_action :authenticate_user!, only: [:new, :create]
   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -19,7 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if resource.active_for_authentication?
         sign_up(resource_name, resource)
 
-        render inertia: 'App'
+        render inertia: 'App', success: 'You have successfully registered.'
       else
         expire_data_after_sign_in!
 
