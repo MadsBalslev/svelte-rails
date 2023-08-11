@@ -1,24 +1,39 @@
 <script>
   import { router } from '@inertiajs/svelte';
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider } from 'flowbite-svelte';
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Li } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 
   export let user;
 
+  let src = user.avatar_url || null;
+
+  function initials() {
+    return user.first_name[0] + user.last_name[0];
+  }
+
   function logout() {
-    console.log('logout')
+    console.log('logout');
     router.delete('/logout');
   }
 </script>
 
-<Avatar id="user-drop" class="cursor-pointer" />
+<Avatar src={src ? src : null} id="user-drop" class="cursor-pointer">{src ? null : initials()}</Avatar>
 <Dropdown triggeredBy="#user-drop" class="w-44 p-3">
   <DropdownHeader>
     <span class="block text-sm">{user.first_name} {user.last_name}</span>
     <span class="block truncate text-sm font-medium">{user.email}</span>
   </DropdownHeader>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem>
+      <Li icon>
+        <Icon name="user-settings-solid" class="w-3.5 h-3.5 mr-2" />
+        Settings
+      </Li>
+  </DropdownItem>
   <DropdownDivider />
-  <DropdownItem on:click={logout}>Sign out</DropdownItem>
+  <DropdownItem on:click={logout}>
+    <Li icon>
+      <Icon name="arrow-right-to-bracket-outline" class="w-3.5 h-3.5 mr-2" />
+      Sign out
+    </Li>
+  </DropdownItem>
 </Dropdown>

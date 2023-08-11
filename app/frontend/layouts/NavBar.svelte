@@ -1,14 +1,10 @@
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button } from 'flowbite-svelte';
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, DarkMode } from 'flowbite-svelte';
   import { router, Link, page } from '@inertiajs/svelte';
   import AvatarDropdown from './AvatarDropdown.svelte';
 
   $: current = $page.url;
   $: user = $page.props.user;
-
-  function login() {
-    router.get('/login');
-  }
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -17,13 +13,15 @@
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
-    <Link class="flex items-center" href="/">
-      <NavLi active={current == '/'}>Home</NavLi>
-    </Link>
     {#if user}
+      <Link class="flex items-center" href="/">
+        <NavLi active={current == '/'}>Home</NavLi>
+      </Link>
+      <Link class="flex items-center" href="/accounts">
+        <NavLi active={current == '/accounts'}>Accounts</NavLi>
+      </Link>
       <AvatarDropdown {user} />
-    {:else}
-      <Button on:click={login} size="sm">Sign in</Button>
     {/if}
+    <DarkMode />
   </NavUl>
 </Navbar>

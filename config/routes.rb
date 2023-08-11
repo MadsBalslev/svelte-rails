@@ -9,8 +9,7 @@ Rails.application.routes.draw do
     get 'signup', to: 'users/registrations#new', as: :new_user_registration
     post 'signup', to: 'users/registrations#create', as: :user_registration
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # inertia routes
+  resources :bank_accounts, path: 'accounts', only: %i[index new create]
 end
