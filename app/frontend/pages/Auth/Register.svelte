@@ -6,7 +6,7 @@
     user: {
       email: null,
       password: null,
-      confirm_password: null,
+      password_confirmation: null,
       first_name: null,
       last_name: null,
     },
@@ -28,7 +28,7 @@
       <Label for="first_name" class="mb-2">First name</Label>
       <Input type="text" id="first_name" placeholder="John" bind:value={$form.user.first_name} required />
       {#if $form.errors.first_name}
-        <Helper class="mt-2" color="green">
+        <Helper class="mt-2" color="red">
           <span class="font-medium">Oh no!</span>
           {$form.errors.first_name}
         </Helper>
@@ -38,7 +38,7 @@
       <Label for="last_name" class="mb-2">Last name</Label>
       <Input type="text" id="last_name" placeholder="Doe" bind:value={$form.user.last_name} required />
       {#if $form.errors.last_name}
-        <Helper class="mt-2" color="green">
+        <Helper class="mt-2" color="red">
           <span class="font-medium">Oh no!</span>
           {$form.errors.last_name}
         </Helper>
@@ -55,7 +55,7 @@
       bind:value={$form.user.email}
     />
     {#if $form.errors.email}
-      <Helper class="mt-2" color="green">
+      <Helper class="mt-2" color="red">
         <span class="font-medium">Oh no!</span>
         {$form.errors.email}
       </Helper>
@@ -65,7 +65,7 @@
     <Label for="password" class="space-y-2">Password</Label>
     <Input type="password" id="password" placeholder="•••••••••" required bind:value={$form.user.password} />
     {#if $form.errors.password}
-      <Helper class="mt-2" color="green">
+      <Helper class="mt-2" color="red">
         <span class="font-medium">Oh no!</span>
         {$form.errors.password}
       </Helper>
@@ -75,15 +75,15 @@
     <Label for="password" class="space-y-2">Password</Label>
     <Input
       type="password"
-      id="password"
+      id="password_confirmation"
       placeholder="•••••••••"
       required
-      bind:value={$form.user.confirm_password}
+      bind:value={$form.user.password_confirmation}
     />
-    {#if $form.errors.confirm_password}
-      <Helper class="mt-2" color="green">
+    {#if $form.errors.password_confirmation}
+      <Helper class="mt-2" color="red">
         <span class="font-medium">Oh no!</span>
-        {$form.errors.confirm_password}
+        {$form.errors.password_confirmation}
       </Helper>
     {/if}
   </div>
