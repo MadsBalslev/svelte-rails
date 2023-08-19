@@ -3,11 +3,9 @@
   import FlashMessages from './FlashMessages.svelte';
 </script>
 <NavBar />
-<FlashMessages />
-<div class="max-w-7xl mx-auto px-4 sm:px-8">
-  <main class="">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <slot/>
-    </div>
-  </main>
+<div class="px-4 mx-auto sm:w-full md:w-10/12">
+  <FlashMessages />
+	<main class="w-full mx-auto">
+		<slot />
+	</main>
 </div>
