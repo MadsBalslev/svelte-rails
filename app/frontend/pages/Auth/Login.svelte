@@ -60,3 +60,8 @@
     </a>
   </div>
 </form>
+
+<form action="/users/auth/github" method="post">
+  <input type="hidden" name="authenticity_token" value={document.querySelector('meta[name="csrf-token"]').content} />
+  <button type="submit">Login with GitHub</button>
+</form>
