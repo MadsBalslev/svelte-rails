@@ -1054,6 +1054,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
+svelte-awesome-icons@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/svelte-awesome-icons/-/svelte-awesome-icons-0.5.5.tgz#1a9c41859372d3647e05c9872b72186b6cf54cba"
+  integrity sha512-sfgOinld4u5wATJSmKrL3/g+SOjihqkSFxmo2wyG44kvAPofOKMqAV1PZuKvx4NNQuArIeaGCf+xiJoJwie11w==
+
 svelte-hmr@^0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.15.3.tgz#df54ccde9be3f091bf5f18fc4ef7b8eb6405fbe6"

@@ -12,6 +12,7 @@ class User < ApplicationRecord
       user.full_name = auth.info.name
       user.first_name = auth.info.name.split(' ').first
       user.last_name = auth.info.name.split(' ').last
+      user.avatar_url = auth.info.image
     end
   end
 end

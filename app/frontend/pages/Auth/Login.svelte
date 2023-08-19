@@ -1,6 +1,8 @@
 <script>
   import { useForm, inertia } from '@inertiajs/svelte';
   import { Input, Label, Helper, Button, Checkbox } from 'flowbite-svelte';
+  import { Icon } from 'svelte-awesome-icons';
+
 
   let form = useForm({
     user: {
@@ -60,8 +62,14 @@
     </a>
   </div>
 </form>
-
-<form action="/users/auth/github" method="post">
+<div class="inline-flex items-center justify-center w-full">
+  <hr class="w-64 h-px bg-gray-200 border-0 dark:bg-gray-700">
+  <span class="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900">or</span>
+</div>
+<form class="w-full max-w-md mx-auto flex flex-col space-y-6" action="/users/auth/github" method="post">
   <input type="hidden" name="authenticity_token" value={document.querySelector('meta[name="csrf-token"]').content} />
-  <button type="submit">Login with GitHub</button>
+  <Button color="dark" type="submit">
+    <Icon name="github" class="mr-2" />
+    Login with GitHub
+  </Button>
 </form>
