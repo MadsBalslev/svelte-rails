@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   # inertia routes
   resources :bank_accounts, path: 'accounts', only: %i[index new create]
+
+  resource :user, only: %i[show edit update]
 end

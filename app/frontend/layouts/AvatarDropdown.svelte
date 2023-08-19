@@ -1,5 +1,5 @@
 <script>
-  import { router } from '@inertiajs/svelte';
+  import { router, Link } from '@inertiajs/svelte';
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Li } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
 
@@ -24,10 +24,12 @@
     <span class="block truncate text-sm font-medium">{user.email}</span>
   </DropdownHeader>
   <DropdownItem>
+    <Link href="/user">
       <Li icon>
         <Icon name="user-settings-solid" class="w-3.5 h-3.5 mr-2" />
-        Settings
+        Profile
       </Li>
+    </Link>
   </DropdownItem>
   <DropdownDivider />
   <DropdownItem on:click={logout}>
