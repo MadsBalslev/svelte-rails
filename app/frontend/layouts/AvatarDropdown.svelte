@@ -1,7 +1,7 @@
 <script>
   import { router, Link } from '@inertiajs/svelte';
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Li } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { Icon } from 'svelte-awesome-icons';
 
   export let user;
 
@@ -26,7 +26,7 @@
   <DropdownItem>
     <Link href="/user">
       <Li icon>
-        <Icon name="user-settings-solid" class="w-3.5 h-3.5 mr-2" />
+        <Icon name="user-gear-solid" class="w-3.5 h-3.5 mr-2" />
         Profile
       </Li>
     </Link>
@@ -34,7 +34,7 @@
   <DropdownDivider />
   <DropdownItem on:click={logout}>
     <Li icon>
-      <Icon name="arrow-right-to-bracket-outline" class="w-3.5 h-3.5 mr-2" />
+      <Icon name="arrow-right-from-bracket-solid" class="w-3.5 h-3.5 mr-2" />
       Sign out
     </Li>
   </DropdownItem>
