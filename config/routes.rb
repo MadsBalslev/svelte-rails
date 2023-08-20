@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   end
 
   # inertia routes
-  resources :bank_accounts, path: 'dashboard', only: %i[index new create]
-
+  resources :bank_accounts, path: 'accounts', only: %i[index new create]
   resource :user, only: %i[show edit update]
+
+  scope :dashboard do
+    get '/', to: 'dashboard#index', as: :dashboard
+  end
 end

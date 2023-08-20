@@ -26,6 +26,9 @@
       <Link href="/dashboard">
         <NavLi active={current == '/dashboard'}>Dashboard</NavLi>
       </Link>
+      <Link href="/accounts">
+        <NavLi active={current == '/accounts'}>Accounts</NavLi>
+      </Link>
     {/if}
   </NavUl>
 </Navbar>

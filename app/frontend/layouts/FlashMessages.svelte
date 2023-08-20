@@ -13,13 +13,15 @@
 
   $: if (show) {
     if (flash.warning) {
-      color = 'yellow'
-      msg = flash.alert
+      color = 'orange'
+      msg = flash.warning
+      icon = 'circle-exclamation-solid'
     }
 
     if (flash.error || flash.alert) {
       color = 'red'
       msg = flash.error || flash.alert
+      icon = 'circle-xmark-solid '
     }
 
     if (flash.notice) {
@@ -30,6 +32,7 @@
     if (flash.success) {
       color = 'green'
       msg = flash.success
+      icon = 'circle-check-solid'
     }
   }
 </script>
@@ -38,7 +41,7 @@
 <div class="my-2 w-6/12 container mx-auto">
   <Toast {color} transition={fly} params={{ x: 200 }} position="bottom-right">
     <svelte:fragment slot="icon">
-      <Icon name={icon} class="w-5 h-5" />
+      <Icon name={icon} />
     </svelte:fragment>
     {msg}
   </Toast>

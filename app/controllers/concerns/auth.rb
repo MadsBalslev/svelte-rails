@@ -13,7 +13,7 @@ module Auth
     if user_signed_in?
       super
     else
-      redirect_to new_user_session_path, :notice => 'You need to login first.'
+      redirect_to new_user_session_path, :warning => 'You need to login first.'
     end
   end
 

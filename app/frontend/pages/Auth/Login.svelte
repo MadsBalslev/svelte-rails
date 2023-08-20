@@ -8,7 +8,7 @@
     user: {
       email: null,
       password: null,
-      remember: false,
+      remember_me: false,
     },
   });
 
@@ -50,7 +50,7 @@
     {/if}
   </div>
   <div class="flex items-start">
-    <Checkbox bind:checked={$form.user.remember}>Remember me</Checkbox>
+    <Checkbox bind:checked={$form.user.remember_me}>Remember me</Checkbox>
     <a href="/" class="ml-auto text-sm text-primary-700 hover:underline dark:text-primary-500"
       >Forgot password?</a
     >
