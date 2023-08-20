@@ -3,7 +3,7 @@
   import { router, Link, page } from '@inertiajs/svelte';
   import AvatarDropdown from './AvatarDropdown.svelte';
 
-  $: current = $page.url;
+  $: activeUrl = $page.url;
   $: user = $page.props.user;
 </script>
 
@@ -18,16 +18,16 @@
     {/if}
     <NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1" />
   </div>
-  <NavUl {hidden}>
+  <NavUl {activeUrl} {hidden}>
     {#if user}
       <Link href="/">
-        <NavLi active={current == '/'}>Home</NavLi>
+        <NavLi href="/">Home</NavLi>
       </Link>
       <Link href="/dashboard">
-        <NavLi active={current == '/dashboard'}>Dashboard</NavLi>
+        <NavLi href="/dashboard">Dashboard</NavLi>
       </Link>
       <Link href="/accounts">
-        <NavLi active={current == '/accounts'}>Accounts</NavLi>
+        <NavLi href="/accounts">Accounts</NavLi>
       </Link>
     {/if}
   </NavUl>

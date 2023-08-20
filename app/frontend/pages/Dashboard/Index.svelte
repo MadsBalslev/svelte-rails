@@ -1,67 +1,13 @@
 <script>
   import { Card, Button } from 'flowbite-svelte';
   import { Icon } from 'svelte-awesome-icons';
-  import { Bar } from 'svelte-chartjs';
-  import 'chart.js/auto';
+  import StackedBar from '@/components/StackedBar.svelte';
 
-  let data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    datasets: [
-      {
-        label: 'Incomes',
-        data: [2301, 2400, 2019, 2200, 2103, 2300],
-        backgroundColor: '#007A1B',
-        borderColor: '#fff',
-        borderWidth: 3,
-        borderRadius: 10,
-        barThickness: 100,
-      },
-      {
-        label: 'Food',
-        data: [148, 294, 200, 145, 152, 289],
-        backgroundColor: '#B0413E',
-        borderColor: '#fff',
-        borderWidth: 3,
-        borderRadius: 10,
-        barThickness: 100,
-      },
-      {
-        label: 'Housing',
-        data: [1301, 1400, 1019, 1200, 1103, 1300],
-        backgroundColor: '#548687',
-        borderColor: '#fff',
-        borderWidth: 3,
-        borderRadius: 10,
-        barThickness: 100,
-      },
-    ],
-  };
-
-  let options = {
-    responsive: true,
-    interaction: {
-      mode: 'index',
-      intersect: false,
-      position: 'nearest',
-    },
-    scales: {
-      x: {
-        stacked: true,
-        grid: {
-          display: false,
-        },
-      },
-      y: {
-        stacked: true,
-      },
-    },
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-  };
 </script>
+
+<svelte:head>
+  <title>Overview</title>
+</svelte:head>
 
 <div class="container w-full flex flex-col gap-10 pb-20">
   <div id="overview">
@@ -69,8 +15,8 @@
     <div class="container my-2 flex">
       <div>
         <p class="text-sm font-light">
-          You've spent <span class="text-red-500 font-medium">-$2,345</span> and earned
-          <span class="text-green-500 font-medium">+$5,432</span> this month
+          You've spent <span class="text-red-500 font-medium">-2.345 kr.</span> and earned
+          <span class="text-green-500 font-medium">+5,432 kr.</span> this month
         </p>
       </div>
     </div>
@@ -86,7 +32,7 @@
           </div>
         </div>
         <div class="flex flex-col justify-end items-start mt-8">
-          <p class="text-2xl">+$5,432</p>
+          <p class="text-2xl">+5.432 kr.</p>
           <a href="/" class="mt-2 inline-flex items-center text-sm text-primary-600 hover:underline">
             Incomes
             <Icon name="arrow-up-right-from-square-solid" class="shrink-0 h-3 w-3 ml-1" />
@@ -104,7 +50,7 @@
           </div>
         </div>
         <div class="flex flex-col justify-end items-start mt-8">
-          <p class="text-2xl">-$2,432</p>
+          <p class="text-2xl">-2.432 kr.</p>
           <a href="/" class="mt-2 inline-flex items-center text-sm text-primary-600 hover:underline">
             Expenses
             <Icon name="arrow-up-right-from-square-solid" class="shrink-0 h-3 w-3 ml-1" />
@@ -122,7 +68,7 @@
           </div>
         </div>
         <div class="flex flex-col justify-end items-start mt-8">
-          <p class="text-2xl">+$1,232</p>
+          <p class="text-2xl">+1.232 kr.</p>
           <a href="/" class="mt-2 inline-flex items-center text-sm text-primary-600 hover:underline">
             Savings
             <Icon name="arrow-up-right-from-square-solid" class="shrink-0 h-3 w-3 ml-1" />
@@ -140,7 +86,7 @@
           </div>
         </div>
         <div class="flex flex-col justify-end items-start mt-8">
-          <p class="text-2xl">-$5,432</p>
+          <p class="text-2xl">-5.432 kr.</p>
           <a href="/" class="mt-2 inline-flex items-center text-xs text-primary-600 hover:underline">
             Debts
             <Icon name="arrow-up-right-from-square-solid" class="shrink-0 h-3 w-3 ml-1" />
@@ -164,6 +110,6 @@
         </Button>
       </div>
     </div>
-    <Bar {data} {options} class="w-full max-h-96" />
+    <StackedBar />
   </div>
 </div>

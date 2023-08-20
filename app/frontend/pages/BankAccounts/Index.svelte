@@ -1,7 +1,6 @@
 <script>
   import { page } from '@inertiajs/svelte';
   import { Card } from 'flowbite-svelte';
-  import PieChart from '@/components/PieChart.svelte';
 
   export let accounts;
 
@@ -21,28 +20,16 @@
   <title>Accounts</title>
 </svelte:head>
 
-<div class="container mt-4 w-full mx-auto">
-  <div class="flex flex-wrap gap-2 justify-center w-full">
-    <Card class="flex-1">
-      <h5 class="text-center mb-2 text-2xl tracking-tight text-gray-900 dark:text-white font-medium">
-        August
-      </h5>
-      <PieChart {data} />
-      <p class="my-4 text-center font-medium text-red-500">-3201,24kr</p>
-    </Card>
-    <Card class="flex-1">
-      <h5 class="text-center mb-2 text-2xl tracking-tight text-gray-900 dark:text-white font-medium">
-        August
-      </h5>
-      <PieChart {data} />
-      <p class="my-4 text-center font-medium text-red-500">-3201,24kr</p>
-    </Card>
-    <Card class="flex-1">
-      <h5 class="text-center mb-2 text-2xl tracking-tight text-gray-900 dark:text-white font-medium">
-        August
-      </h5>
-      <PieChart {data} />
-      <p class="my-4 text-center font-medium text-red-500">-3201,24kr</p>
-    </Card>
+<div class="container w-full flex flex-col gap-10 pb-20">
+  <div id="overview">
+    <h3 class="text-lg font-semibold">Accounts</h3>
+    <div class="container my-2 flex">
+      <div>
+        <p class="text-sm font-light">
+          You have <span class="font-medium">3</span> private accounts, and
+          <span class="font-medium">2</span> shared accounts
+        </p>
+      </div>
+    </div>
   </div>
 </div>
