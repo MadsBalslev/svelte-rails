@@ -12,17 +12,18 @@
     <img src="/assets/logo.svg" alt="logo" class="w-8 h-8 mr-2" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Svelte-Rails</span>
   </NavBrand>
-  <NavHamburger on:click={toggle} />
+  <div class="flex items-center md:order-2">
+    <AvatarDropdown {user} />
+    <NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1" />
+  </div>
   <NavUl {hidden}>
     {#if user}
-      <Link class="flex items-center" href="/">
+      <Link href="/">
         <NavLi active={current == '/'}>Home</NavLi>
       </Link>
-      <Link class="flex items-center" href="/dashboard">
+      <Link href="/dashboard">
         <NavLi active={current == '/dashboard'}>Dashboard</NavLi>
       </Link>
-      <AvatarDropdown {user} />
     {/if}
-    <DarkMode />
   </NavUl>
 </Navbar>

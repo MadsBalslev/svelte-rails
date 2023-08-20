@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 export default {
   darkMode: 'class',
   content: [
-    "./app/frontend/components/**/*.{js,svelte}",
-    "./app/frontend/layouts/**/*.{js,svelte}",
-    "./app/frontend/pages/**/*.{js,svelte}",
-    './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
+    './app/frontend/components/**/*.{js,svelte}',
+    './app/frontend/layouts/**/*.{js,svelte}',
+    './app/frontend/pages/**/*.{js,svelte}',
+    './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}',
   ],
   theme: {
     extend: {
@@ -24,8 +24,8 @@ export default {
           600: '#EF562F',
           700: '#EB4F27',
           800: '#CC4522',
-          900: '#A5371B'
-        }
+          900: '#A5371B',
+        },
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
@@ -38,5 +38,5 @@ export default {
     require('@tailwindcss/typography'),
     require('flowbite/plugin'),
   ],
-}
+};
 
