@@ -1,7 +1,7 @@
 <script>
   import { page } from '@inertiajs/svelte';
-  import { Alert } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { Toast } from 'flowbite-svelte';
+  import { Icon } from 'svelte-awesome-icons';
   import { fly } from 'svelte/transition';
 
   $: flash = $page.props.flash;
@@ -9,6 +9,7 @@
 
   let color = 'primary'
   let msg = ''
+  let icon = 'circle-info-solid'
 
   $: if (show) {
     if (flash.warning) {
@@ -35,9 +36,11 @@
 
 {#if show}
 <div class="my-2 w-6/12 container mx-auto">
-  <Alert {color} dismissable transition={fly} params={{ x: 200 }}>
-    <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <Toast {color} transition={fly} params={{ x: 200 }} position="bottom-right">
+    <svelte:fragment slot="icon">
+      <Icon name={icon} class="w-5 h-5" />
+    </svelte:fragment>
     {msg}
-  </Alert>
+  </Toast>
 </div>
 {/if}

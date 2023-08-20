@@ -13,7 +13,9 @@
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Svelte-Rails</span>
   </NavBrand>
   <div class="flex items-center md:order-2">
-    <AvatarDropdown {user} />
+    {#if user}
+       <AvatarDropdown {user} />
+    {/if}
     <NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1" />
   </div>
   <NavUl {hidden}>
