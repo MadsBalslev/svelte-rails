@@ -6,7 +6,7 @@
     series: [
       {
         name: 'Income',
-        data: ['1420', '1620', '1820', '1420', '1650', '2120', '788', '810', '866', '788', '1100', '1200']
+        data: ['1420', '1620', '1820', '1420', '1650', '2120', '788', '810', '866', '788', '1100', '1200'],
       },
       {
         name: 'Food',
@@ -14,23 +14,23 @@
       },
       {
         name: 'Housing',
-        data: ['788', '810', '866', '788', '1100', '1200', '1420', '1620', '1820', '1420', '1650', '2120']
-      }
+        data: ['788', '810', '866', '788', '1100', '1200', '1420', '1620', '1820', '1420', '1650', '2120'],
+      },
     ],
     chart: {
       sparkline: {
-        enabled: false
+        enabled: false,
       },
       type: 'bar',
       width: '100%',
       height: 400,
       stacked: true,
       toolbar: {
-        show: false
-      }
+        show: false,
+      },
     },
     fill: {
-      opacity: 1
+      opacity: 1,
     },
     plotOptions: {
       bar: {
@@ -39,51 +39,92 @@
         borderRadiusApplication: 'end',
         borderRadius: 6,
         dataLabels: {
-          position: 'top'
-        }
-      }
+          position: 'top',
+        },
+      },
     },
     legend: {
       show: true,
-      position: 'bottom'
+      position: 'bottom',
     },
+    responsive: [
+      {
+        breakpoint: 768,
+        options: {
+          plotOptions: {
+            bar: {
+              horizontal: true,
+            },
+          },
+          legend: {
+            position: 'bottom',
+          },
+          grid: {
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+          },
+          yaxis: {
+            labels: {
+              formatter: function (value) {
+                return value;
+              },
+            },
+          },
+          xaxis: {
+            labels: {
+              formatter: function (value) {
+                return 'kr. ' + value;
+              },
+            },
+          },
+        },
+      },
+    ],
     dataLabels: {
-      enabled: false
+      enabled: false,
     },
     tooltip: {
       shared: true,
       intersect: false,
       formatter: function (value) {
         return 'kr. ' + value;
-      }
+      },
     },
     xaxis: {
       labels: {
         show: true,
         style: {
           fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
-        }
+          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400',
+        },
       },
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       axisTicks: {
-        show: false
+        show: false,
       },
       axisBorder: {
-        show: false
-      }
+        show: false,
+      },
     },
     yaxis: {
       labels: {
         show: true,
         style: {
           fontFamily: 'Inter, sans-serif',
-          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400',
         },
         formatter: function (value) {
           return 'kr. ' + value;
-        }
-      }
+        },
+      },
     },
     grid: {
       show: true,
@@ -91,12 +132,22 @@
       padding: {
         left: 2,
         right: 2,
-        top: -20
-      }
+        top: -20,
+      },
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
     },
     fill: {
-      opacity: 1
-    }
+      opacity: 1,
+    },
   };
 </script>
 

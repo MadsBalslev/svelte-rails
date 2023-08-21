@@ -11,17 +11,17 @@
 
 <div class="container w-full flex flex-col gap-10 pb-20">
   <div id="overview">
-    <h3 class="text-lg font-semibold">Overview</h3>
+    <h3 class="text-lg font-semibold dark:text-white">Overview</h3>
     <div class="container my-2 flex">
       <div>
-        <p class="text-sm font-light">
+        <p class="text-sm font-light dark:text-white">
           You've spent <span class="text-red-500 font-medium">-2.345 kr.</span> and earned
           <span class="text-green-500 font-medium">+5,432 kr.</span> this month
         </p>
       </div>
     </div>
     <div class="cards mt-8 justify-items-center grid gap-2 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-      <Card class="w-full">
+      <Card class="min-w-full">
         <div class="flex justify-between items-top">
           <Icon name="sack-dollar-solid" class="shrink-0 h-4 w-4" />
           <div class="flex items-center gap-1">
@@ -39,7 +39,7 @@
           </a>
         </div>
       </Card>
-      <Card class="w-full">
+      <Card class="min-w-full">
         <div class="flex justify-between items-top">
           <Icon name="credit-card-solid" class="shrink-0 h-4 w-4" />
           <div class="flex items-center gap-1">
@@ -57,7 +57,7 @@
           </a>
         </div>
       </Card>
-      <Card class="w-full">
+      <Card class="min-w-full">
         <div class="flex justify-between items-top">
           <Icon name="chart-simple-solid" class="shrink-0 h-4 w-4" />
           <div class="flex items-center gap-1">
@@ -75,7 +75,7 @@
           </a>
         </div>
       </Card>
-      <Card class="w-full">
+      <Card class="min-w-full">
         <div class="flex justify-between items-top">
           <Icon name="chart-pie-solid" class="shrink-0 h-4 w-4" />
           <div class="flex items-center gap-1">
