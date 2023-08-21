@@ -106,7 +106,7 @@
         <Button outline pill size="xs">
           Jan
           <Icon name="arrow-right-solid" class="w-3.5 h-3.5 mx-2" />
-          Now
+          Dec
         </Button>
       </div>
     </div>

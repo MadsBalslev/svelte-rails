@@ -32,6 +32,10 @@
     fill: {
       opacity: 1,
     },
+    stroke: {
+      width: 2,
+      colors: ['#fff'],
+    },
     plotOptions: {
       bar: {
         horizontal: false,
@@ -106,7 +110,7 @@
           cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400',
         },
       },
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       axisTicks: {
         show: false,
       },
