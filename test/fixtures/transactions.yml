@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  amount: 1.5
+  date: 2023-08-21 19:05:07
+  bank_date: 2023-08-21 19:05:07
+  BankAccount: one
+
+two:
+  description: MyString
+  amount: 1.5
+  date: 2023-08-21 19:05:07
+  bank_date: 2023-08-21 19:05:07
+  BankAccount: two

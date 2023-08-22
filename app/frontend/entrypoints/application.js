@@ -1,5 +1,6 @@
 import '@/stylesheets/main.css'
 import Layout from '@/layouts/layout.svelte'
+import './dayjs.config.js'
 
 import { createInertiaApp } from '@inertiajs/svelte'
 
