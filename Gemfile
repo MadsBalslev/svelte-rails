@@ -66,4 +66,6 @@ gem 'omniauth-github', '~> 2.0'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'pundit', '~> 2.3'
 
-gem "faker", "~> 3.2"
+gem 'faker', '~> 3.2'
+
+gem 'active_model_serializers', '~> 0.10.13', require: true

@@ -1,23 +1,19 @@
 <script>
   import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import da from 'apexcharts/dist/locales/da.json';
+
+  export let data = [];
 
   const options = {
     series: [
       {
-        name: 'Income',
-        data: ['1420', '1620', '1820', '1420', '1650', '2120', '788', '810', '866', '788', '1100', '1200'],
-      },
-      {
-        name: 'Food',
-        data: ['788', '810', '866', '788', '1100', '1200', '1420', '1620', '1820', '1420', '1650', '2120'],
-      },
-      {
-        name: 'Housing',
-        data: ['788', '810', '866', '788', '1100', '1200', '1420', '1620', '1820', '1420', '1650', '2120'],
+        name: 'Expenses',
+        data: data,
       },
     ],
     chart: {
+      locales: [da],
+      defaultLocale: 'da',
       sparkline: {
         enabled: false,
       },
@@ -27,6 +23,9 @@
       stacked: true,
       toolbar: {
         show: false,
+      },
+      zoom: {
+        enabled: false,
       },
     },
     fill: {
@@ -103,6 +102,7 @@
       },
     },
     xaxis: {
+      type: 'datetime',
       labels: {
         show: true,
         style: {
@@ -110,9 +110,8 @@
           cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400',
         },
       },
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       axisTicks: {
-        show: false,
+        show: true,
       },
       axisBorder: {
         show: false,

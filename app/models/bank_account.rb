@@ -6,6 +6,10 @@ class BankAccount < ApplicationRecord
 
   before_save :set_color
 
+  def balance
+    transactions.sum(:amount)
+  end
+
   private
 
   def set_color

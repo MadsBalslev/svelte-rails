@@ -3,6 +3,8 @@
   import { Icon } from 'svelte-awesome-icons';
   import StackedBar from '@/components/StackedBar.svelte';
 
+  export let accounts = [];
+  export let withdrawals = [];
 </script>
 
 <svelte:head>
@@ -110,6 +112,6 @@
         </Button>
       </div>
     </div>
-    <StackedBar />
+    <StackedBar data={withdrawals} />
   </div>
 </div>

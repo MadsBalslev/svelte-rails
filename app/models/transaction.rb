@@ -10,4 +10,7 @@ class Transaction < ApplicationRecord
   scope :deposits, -> { where(transaction_type: :deposit) }
   scope :withdrawals, -> { where(transaction_type: :withdrawal) }
   scope :transfers, -> { where(transaction_type: :transfer) }
+  scope :this_month, -> { where(date: Time.now.beginning_of_month..Time.now.end_of_month) }
+
+
 end
